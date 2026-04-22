@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modern Academy</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    scroll-behavior:smooth;
+}
+
+/* HEADER */
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 50px;
+    background:rgba(10,15,44,0.9);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+}
+
+header h1{
+    color:#00e5ff;
+}
+
+nav a{
+    color:#fff;
+    margin:0 15px;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#00e5ff;
+}
+
+/* HERO */
+.hero{
+    height:100vh;
+    background:url('download.jpeg') no-repeat center/cover;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    position:relative;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+}
+
+.hero-content{
+    position:relative;
+    animation:fadeIn 2s ease;
+}
+
+.hero h2{
+    font-size:55px;
+}
+
+.hero p{
+    margin:20px 0;
+    max-width:700px;
+}
+
+.hero button{
+    padding:12px 25px;
+    background:#00e5ff;
+    border:none;
+    color:black;
+    cursor:pointer;
+}
+
+/* ABOUT */
+.about{
+    padding:100px 50px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:40px;
+    align-items:center;
+}
+
+.about img{
+    width:400px;
+    border-radius:15px;
+    animation:slideLeft 2s;
+}
+
+.about-text{
+    flex:1;
+}
+
+.about h2{
+    margin-bottom:20px;
+}
+
+.about p{
+    margin-bottom:15px;
+}
+
+/* SERVICES */
+.services{
+    background:#f4f7fb;
+    padding:100px 50px;
+    text-align:center;
+}
+
+.cards{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    justify-content:center;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    width:300px;
+    border-radius:15px;
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:translateY(-15px);
+    box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
+
+.card button{
+    margin-top:15px;
+    padding:10px;
+    border:none;
+    background:#00e5ff;
+}
+
+/* CONTACT */
+.contact{
+    padding:100px 50px;
+    text-align:center;
+}
+
+.contact form{
+    max-width:500px;
+    margin:auto;
+}
+
+.contact input, .contact textarea{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+}
+
+.contact button{
+    padding:12px 25px;
+    background:#0a0f2c;
+    color:white;
+    border:none;
+}
+
+/* FOOTER */
+footer{
+    background:#0a0f2c;
+    color:white;
+    padding:50px;
+    text-align:center;
+}
+
+footer i{
+    margin:10px;
+    font-size:22px;
+    transition:0.3s;
+}
+
+footer i:hover{
+    color:#00e5ff;
+    transform:scale(1.2);
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+@keyframes slideLeft{
+    from{transform:translateX(-100px); opacity:0;}
+    to{transform:translateX(0); opacity:1;}
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    header{
+        flex-direction:column;
+    }
+
+    .hero h2{
+        font-size:32px;
+    }
+
+    .about{
+        flex-direction:column;
+    }
+
+    .about img{
+        width:100%;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <h1>Academy</h1>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <h2>Welcome to Our Academy</h2>
+        <p>
+        Our academy is a place where students are guided toward success through modern teaching methods, professional instructors, and a structured academic system. We focus not only on education but also on personality development and future career growth.
+        </p>
+        <button onclick="goAbout()">Explore More</button>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+    <img src="image.jpeg">
+    
+    <div class="about-text">
+        <h2>About Our Academy</h2>
+        <p>
+        Our academy is built on a strong foundation of quality education and discipline. We provide a supportive environment where students can grow academically and personally. Our teachers are highly qualified and dedicated to helping students achieve their goals.
+        </p>
+        <p>
+        We use modern learning techniques including digital tools, test systems, and performance tracking to ensure each student reaches their maximum potential. Our mission is to create confident, skilled, and successful individuals.
+        </p>
+    </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+    <h2>Our Services</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Matric Classes</h3>
+            <p>
+            We provide complete preparation for Matric students with top results every year and structured test sessions.
+            </p>
+            <button>Read More</button>
+        </div>
+
+        <div class="card">
+            <h3>Intermediate Classes</h3>
+            <p>
+            Our intermediate program ensures high marks with detailed concept learning and weekly assessments.
+            </p>
+            <button>Read More</button>
+        </div>
+
+        <div class="card">
+            <h3>Entry Test Preparation</h3>
+            <p>
+            We train students for MDCAT, ECAT and other entry tests with expert guidance and practice material.
+            </p>
+            <button>Read More</button>
+        </div>
+
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <p>Get in touch with us for admissions and inquiries.</p>
+
+    <form>
+        <input type="text" placeholder="Your Name">
+        <input type="email" placeholder="Your Email">
+        <textarea placeholder="Your Message"></textarea>
+        <button>Send Message</button>
+    </form>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <h3>Modern Academy</h3>
+    <p>Empowering Students for a Better Future</p>
+
+    <div>
+        <i class="fab fa-facebook"></i>
+        <i class="fab fa-whatsapp"></i>
+        <i class="fab fa-youtube"></i>
+        <i class="fab fa-instagram"></i>
+    </div>
+
+    <p>© 2026 All Rights Reserved</p>
+</footer>
+
+<script>
+
+function goAbout(){
+    document.getElementById("about").scrollIntoView({behavior:"smooth"});
+}
+
+// header shadow effect
+window.addEventListener("scroll", ()=>{
+    document.querySelector("header").style.boxShadow="0 3px 10px rgba(0,0,0,0.3)";
+});
+
+</script>
+
+</body>
+</html>
